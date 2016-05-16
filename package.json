@@ -1,0 +1,30 @@
+{
+  "name": "snarl-gif",
+  "version": "0.0.0",
+  "description": "adds !gif to snarl",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/martindale/snarl-gif.git"
+  },
+  "keywords": [
+    "maki",
+    "snarl",
+    "plugin",
+    "gif",
+    "fun",
+    "entertainment"
+  ],
+  "author": "Eric Martindale",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/martindale/snarl-gif/issues"
+  },
+  "homepage": "https://github.com/martindale/snarl-gif",
+  "dependencies": {
+    "restler": "^3.4.0"
+  }
+}
