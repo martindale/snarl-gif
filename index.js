@@ -12,11 +12,11 @@ module.exports = {
     rest.get(url, options).on('complete', function(data) {
       var img;
       if(data.gifs && data.gifs.length > 0) {
-        img = chooseRandom(data.gifs);
+        img = chooseRandom(data.gifs).url;
       } else {
         img = data.url;
       }
-      cb(null, 'word!  ' + img.url);
+      cb(null, 'word!  ' + img);
     });
   }
 }
