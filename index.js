@@ -6,8 +6,21 @@ module.exports = {
     var query = encodeURIComponent(input.parsed);
     // this is the test key from giphy.
     // TODO: replace with another API, or randomize the results?
-    rest.get('http://api.giphy.com/v1/gifs/search?q='+query+'&api_key=dc6zaTOxFJmzC').on('complete', function(data) {
-      cb(null, 'word!  ' + data.data[0].images.fixed_height.url);
+    var options = { rejectUnauthorized: false };
+    var baseUrl = 'https://ticketap.com/rightgif'
+    var url = baseUrl + '?text='+query+'&email=whatever&subdomain=whatever'
+    rest.get(url, options).on('complete', function(data) {
+      var img;
+      if(data.gifs && data.gifs.length > 0) {
+        img = chooseRandom(data.gifs);
+      } else {
+        img = data.url;
+      }
+      cb(null, 'word!  ' + img.url);
     });
   }
+}
+
+function chooseRandom(gifs) {
+  return gifs[Math.floor(Math.random() * gifs.length)];
 }

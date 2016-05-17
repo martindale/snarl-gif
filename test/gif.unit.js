@@ -9,7 +9,7 @@ describe('snarl-gif', function() {
     });
     it('should parse an input', function (done) {
       var input = {
-        parsed: 'sure'
+        parsed: "hello world"
       };
 
       plugin.gif(input, function(err, msg) {
