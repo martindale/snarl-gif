@@ -9,7 +9,8 @@ describe('snarl-gif', function() {
     });
     it('should parse an input', function (done) {
       var input = {
-        parsed: 'sure'
+        parsed: 'sure',
+        text: 'asdf !gif dis gon be good. whatever.'
       };
 
       plugin.gif(input, function(err, msg) {
