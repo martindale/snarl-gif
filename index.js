@@ -8,7 +8,7 @@ module.exports = {
     // TODO: replace with another API, or randomize the results?
     var options = { rejectUnauthorized: false };
     var baseUrl = 'https://ticketap.com/rightgif'
-    var url = baseUrl + '?text='+query+'&email=whatever&subdomain=whatever'
+    var url = baseUrl + '?text='+query
     rest.get(url, options).on('complete', function(data) {
       var img;
       if(data.gifs && data.gifs.length > 0) {
