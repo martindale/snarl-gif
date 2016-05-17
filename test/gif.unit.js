@@ -19,4 +19,9 @@ describe('snarl-gif', function() {
       });
     });
   });
+  describe('#chooseRandom()', function () {
+    it('should exist as a function', function () {
+      assert.equal(typeof plugin.chooseRandom, 'function');
+    });
+  });
 });
