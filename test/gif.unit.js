@@ -23,5 +23,10 @@ describe('snarl-gif', function() {
     it('should exist as a function', function () {
       assert.equal(typeof plugin.chooseRandom, 'function');
     });
+    it('should return an item in the array', function () {
+      var arr = [1, 2, 3, 4];
+      var item = plugin.chooseRandom(arr);
+      assert.isTrue(arr.indexOf(item) > -1)
+    });
   });
 });
