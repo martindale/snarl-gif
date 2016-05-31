@@ -5,8 +5,8 @@ module.exports = {
     var self = this;
     var query = encodeURIComponent(input.parsed);
     var options = { rejectUnauthorized: false };
-    var baseUrl = 'https://ticketap.com/rightgif'
-    var url = baseUrl + '?text='+query
+    var baseUrl = 'https://ticketap.com/rightgif';
+    var url = baseUrl + '?text='+query;
     rest.get(url, options).on('complete', function(data) {
       var img;
       if(data.gifs && data.gifs.length > 0) {
@@ -20,4 +20,4 @@ module.exports = {
   'chooseRandom': function(gifs) {
     return gifs[Math.floor(Math.random() * gifs.length)];
   }
-}
+};
