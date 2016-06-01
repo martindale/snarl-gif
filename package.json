@@ -4,7 +4,8 @@
   "description": "adds !gif to snarl",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "coverage": "NODE_ENV=test istanbul cover _mocha -- --recursive"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,7 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "coveralls": "^2.11.9",
+    "eslint": "^2.11.1",
     "istanbul": "^0.4.3",
     "mocha": "^2.4.5"
   }
