@@ -9,7 +9,7 @@ describe('snarl-gif', function() {
     });
     it('should parse an input', function (done) {
       var input = {
-        parsed: 'sure'
+        parsed: "hello world"
       };
 
       plugin.gif(input, function(err, msg) {
@@ -17,6 +17,16 @@ describe('snarl-gif', function() {
         assert.isOk(msg)
         done(err);
       });
+    });
+  });
+  describe('#chooseRandom()', function () {
+    it('should exist as a function', function () {
+      assert.equal(typeof plugin.chooseRandom, 'function');
+    });
+    it('should return an item in the array', function () {
+      var arr = [1, 2, 3, 4];
+      var item = plugin.chooseRandom(arr);
+      assert.isTrue(arr.indexOf(item) > -1)
     });
   });
 });

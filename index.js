@@ -2,12 +2,17 @@ var rest = require('restler');
 
 module.exports = {
   'gif': function(input, cb) {
-    // input.parsed is the user message, minus any !triggers
+    var self = this;
     var query = encodeURIComponent(input.parsed);
-    // this is the test key from giphy.
-    // TODO: replace with another API, or randomize the results?
-    rest.get('http://api.giphy.com/v1/gifs/search?q='+query+'&api_key=dc6zaTOxFJmzC').on('complete', function(data) {
-      cb(null, 'word!  ' + data.data[0].images.fixed_height.url);
+    var options = { rejectUnauthorized: false };
+    var baseUrl = 'https://ticketap.com/rightgif';
+    var url = baseUrl + '?text='+query;
+    rest.get(url, options).on('complete', function(data) {
+      var img = self.chooseRandom(data.gifs).url;
+      cb(null, 'word!  ' + img);
     });
+  },
+  'chooseRandom': function(gifs) {
+    return gifs[Math.floor(Math.random() * gifs.length)];
   }
-}
+};
