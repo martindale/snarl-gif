@@ -4,7 +4,7 @@
   "description": "Respond to chat messages with clever GIFs, on demand!",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --recursive",
+    "test": "semistandard --verbose index | snazzy && mocha --recursive",
     "stylecheck": "semistandard --verbose | snazzy",
     "coverage": "NODE_ENV=test istanbul cover _mocha -- --recursive"
   },
