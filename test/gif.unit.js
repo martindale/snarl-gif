@@ -1,8 +1,8 @@
+/*eslint-env mocha */
 var assert = require('chai').assert;
-
 var plugin = require('../');
 
-describe('snarl-gif', function() {
+describe('snarl-gif', function () {
   describe('#interpret()', function () {
     it('should exist as a function', function () {
       assert.equal(typeof plugin.gif, 'function');
