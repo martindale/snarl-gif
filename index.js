@@ -8,12 +8,7 @@ module.exports = {
     var baseUrl = 'https://ticketap.com/rightgif';
     var url = baseUrl + '?text=' + query;
     rest.get(url, options).on('complete', function (data) {
-      var img;
-      if (data.gifs && data.gifs.length > 0) {
-        img = self.chooseRandom(data.gifs).url;
-      } else {
-        img = data.url;
-      }
+      var img = self.chooseRandom(data.gifs).url;
       cb(null, 'word!  ' + img);
     });
   },
